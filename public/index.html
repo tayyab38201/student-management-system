@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Student Management System</h1>
+            <p>Manage your students efficiently</p>
+        </header>
+
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <h2>📈 Dashboard</h2>
+            <div id="stats" class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <span id="totalStudents">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Courses</h3>
+                    <span id="totalCourses">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Grade A Students</h3>
+                    <span id="gradeA">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Student Form -->
+        <div class="form-section">
+            <h2>➕ Add New Student</h2>
+            <form id="studentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="rollNumber" placeholder="Roll Number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="number" id="age" placeholder="Age" min="16" max="30" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="grade" required>
+                            <option value="">Select Grade</option>
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="phone" placeholder="Phone (Optional)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="course" placeholder="Course" required>
+                </div>
+                <button type="submit" class="btn-primary">Add Student</button>
+            </form>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="filters-section">
+            <h2>🔍 Search & Filter</h2>
+            <div class="filters">
+                <input type="text" id="search" placeholder="Search by name or roll number">
+                <input type="text" id="filterCourse" placeholder="Filter by course">
+                <select id="filterGrade">
+                    <option value="">All Grades</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select>
+                <button onclick="loadStudents()" class="btn-secondary">Apply</button>
+                <button onclick="clearFilters()" class="btn-outline">Clear</button>
+            </div>
+        </div>
+
+        <!-- Students List -->
+        <div class="students-section">
+            <h2>👨‍🎓 Students List <span id="studentCount"></span></h2>
+            <div id="loading" class="loading">Loading students...</div>
+            <div id="studentsList" class="students-grid"></div>
+            <div id="noStudents" class="no-students" style="display: none;">
+                No students found matching your criteria.
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Student Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>✏️ Edit Student</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <input type="text" id="editName" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editRollNumber" placeholder="Roll Number" required readonly>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="number" id="editAge" placeholder="Age" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="editGrade" required>
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="editEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editPhone" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editCourse" placeholder="Course" required>
+                </div>
+                <button type="submit" class="btn-primary">Update Student</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

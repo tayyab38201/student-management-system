@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Ali Ahmed",
+    "rollNumber": "ST001",
+    "age": 20,
+    "grade": "A",
+    "email": "ali.ahmed@example.com",
+    "phone": "0300-1234567",
+    "course": "Computer Science",
+    "createdAt": "2025-10-30T10:45:52.599Z"
+  },
+  {
+    "id": 2,
+    "name": "Sara Khan",
+    "rollNumber": "ST002",
+    "age": 22,
+    "grade": "A+",
+    "email": "sara.khan@example.com",
+    "phone": "0312-7654321",
+    "course": "Software Engineering",
+    "createdAt": "2025-10-30T10:45:52.600Z"
+  },
+  {
+    "id": 3,
+    "name": "Muhammad Tayyab",
+    "rollNumber": "wx1418034",
+    "age": 29,
+    "grade": "B",
+    "email": "muhammadtayyab38201@gmail.com",
+    "phone": "03323436622",
+    "course": "Software Engineering",
+    "createdAt": "2025-10-30T11:00:54.934Z"
+  },
+  {
+    "id": 4,
+    "name": "Muhammad Shoaib",
+    "rollNumber": "124631",
+    "age": 30,
+    "grade": "A+",
+    "email": "Shoaib@gmail.com",
+    "phone": "03483857874",
+    "course": "Physics",
+    "createdAt": "2025-10-30T11:10:44.175Z"
+  },
+  {
+    "id": 5,
+    "name": "David John",
+    "rollNumber": "11196",
+    "age": 20,
+    "grade": "B",
+    "email": "Sh@gmail.com",
+    "phone": "03483848604",
+    "course": "Neurosurgeons",
+    "createdAt": "2025-10-30T11:10:44.175Z"
+  }
+]
